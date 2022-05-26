@@ -5,16 +5,14 @@ This is the source code for Moct.
   <p align='justify'>
       Moct is a turn-based adventure game, made using C++ and the GRAPHICS.H library.
   </p>
+  <h6>
+      The player represents a band of misfits called “The Moct”. They have to fight through and clear a forest infested with alien chieftains and their goons, so that they may live peacefully as outlaws in it.
+  </h6>
   <img src='readme_assets/splash_screen.png' alt="moct" width='auto' height='70%'/>
   
   
   
   <h1> Gallery </h1>
-  <h3> This is a gallery for Moct </h3>
-  
-  <h6>
-      The player represents a band of misfits called “The Moct”. They have to fight through and clear a forest infested with alien chieftains and their goons, so that they may live peacefully as outlaws in it.
-  </h6>
   
   <br />
   <p align='justify'>
