@@ -4,106 +4,114 @@ This is the source code for the turn-based adventure game Moct.
 
   <img src="readme_assets/intro.png" alt="intro" width='80%' height='auto'/>
   <p align='justify'>
-      Overhead is a rudimentary game engine, made using Java SE8, LWJGL (Light Weight Java Gaming Library) and JOML (Java OpenGL Math Library). 
-      It is equipped with:
-      <ol>
-        <li>
-          an entity system
-        </li>
-        <li>
-          an animation system
-        </li>
-        <li>
-          a collision system
-        </li>
-        <li>
-          a tileset system
-        </li>
-        <li>
-          a texture system
-        </li>
-        <li>
-          a world
-        </li>
-        <li>
-          an input handler
-        </li>
-        <li>
-          a camera
-        </li>
-        <li>
-          shaders
-        </li>
-        <li>
-          a screen tile renderer
-        </li>
-     </ol>  
+      Moct is a turn-based adventure game, made using C++ and the GRAPHICS.H library.
   </p>
-  <a href='https://www.youtube.com/watch?v=oxdO2_ccgTQ'>Trailer</a>
+  <img src='readme_assets/splash_screen.png' alt="moct" width='auto' height='70%'/>
   
   
   
   <h1> Gallery </h1>
-  <h3> This is a gallery for Overhead: The Game </h3>
+  <h3> This is a gallery for Moct </h3>
   
   <h6>
-      Overhead: The game is a short maze. The player has to navigate through it. The game is designed completely in Overhead: The Engine. Its sole purpose is to test the               functionalities of the Engine.
+      The player represents a band of misfits called “The Moct”. They have to fight through and clear a forest infested with alien chieftains and their goons, so that they may live peacefully as outlaws in it.
   </h6>
   
   <br />
   <p align='justify'>
-      1. An independent window is initialised. For those familiar with Windows forms, this is a classic SDI Win-form.
+      1. The main menu screen, used to navigate to the map, inventory, database and to quit the game. 
+      The code can be found in MENU.cpp
   </p>
-  <img src='readme_assets\story_1.png' alt="story_1" width='auto' height='70%'/>
+  <img src='readme_assets\menu_screen.png' alt="menu screen" width='auto' height='70%'/>
   
+  <br />
   <p align='justify'>
-      2.The player is an entity. It has its anims set by the animation system, which has the options to add new anims (this example only has an idle and running animation). It           also has a collidable.
-      <br />
-      3. Input is handled by the Input.java class. It too can be customised for additional input events.
-      <br />
-      4. An entity for the floor is also present. It does not have a collidable attached, so the player can walk on it.
+      2. Various map prototypes, designed for the player to navigate through.
+      The code can be found in MAP1.cpp, MAP2.cpp and MAP3.cpp
+      The blue boxes are common goons. The red circles are the chieftains.
   </p>
-  <img src='readme_assets\story_4.gif' alt="story_4" width='70%' height='auto'/>
+  <img src='readme_assets\map_screen_prototypes.png' alt="map screen 1" width='auto' height='70%'/>
+  <img src='readme_assets\map_screen.png' alt="map screen 2" width='auto' height='70%'/>
+  <img src='readme_assets\map_screen_further.png' alt="map screen 3" width='auto' height='70%'/>
   
+  <br />
   <p align='justify'>
-      5.There is an entity for the walls, with its collidable. The player and the walls are in the same collision layer, and hence they collide.
-      <br />
-      6. The collidable work through the concept of Axis Aligned Bounding Boxes (AABB).
+      3. The chieftain sprites.
+      The code can be found in SPRITE.cpp
   </p>
-  <img src='readme_assets\story_3.gif' alt="story_3" width='70%' height='auto'/>
+  <img src='readme_assets\boss1.png' alt="chieftain 1" width='auto' height='40%'/>
+  <img src='readme_assets\boss2.png' alt="chieftain 2" width='auto' height='40%'/>
   
+  <br />
   <p align='justify'>
-      7. A camera is also initialised. It is made to follow the player, with smoothness. There is also a 'blind region', wherein if player moves, the camera will not budge.
-      <br />
-      8. There are also bounds to the world, inside which the camera is wrapped. That is, if the player reaches the edges of the world, the camera stops moving.
+      4. The fight screen. This UI shows up when a battle begins.
+      The code can be found in FIGHTBASIC.cpp, FIGHTUI1.cpp, FIGHTUI2.cpp and FIGHTUI3.cpp
   </p>
-  <img src='readme_assets\story_2.gif' alt="story_2" width='70%' height='auto'/>
+  <img src='readme_assets\fight_ui.png' alt="fight UI 1" width='auto' height='70%'/>
+  <img src='readme_assets\fight_ui_1.png' alt="fight UI 2" width='auto' height='70%'/>
+  <img src='readme_assets\fight_ui_2.png' alt="fight UI 3" width='auto' height='70%'/>
+  <img src='readme_assets\fight_ui_final.png' alt="fight UI 4" width='auto' height='70%'/>
   
+  <br />
   <p align='justify'>
-      8. The viewport (area visible inside the camera) is the only place where the textures are rendered. Everywhere outside the camera is not rendered. This is an attempt at            hyper-efficiency for the largest of in-game worlds.
+      5. A dummy loading screen. Could be used if some data was required to be loaded.
+      The code can be found in MAIN.cpp
   </p>
-  <img src='readme_assets\story_5.gif' alt="story_5" width='70%' height='auto'/>
+  <img src='readme_assets\loading_screen.png' alt="loading screen" width='auto' height='70%'/>
   
+  <br />
   <p align='justify'>
-      9. The renderer, animations, and basically everything that needs work frame-by-frame works at the same refresh-rate. This is set up using pretty standard timer and                  interval logic. Here, it is capped at 60 fps (customisable).
+      6. The shop screen. The player can buy weapons, resources to replenish health, etc.
+      The code can be found in SHOP.cpp
   </p>
-  <img src='readme_assets\story_6.png' alt="story_6" width='auto' height='70%'/>
+  <img src='readme_assets\shop_screen.png' alt="shop screen" width='auto' height='70%'/>
+  
+  <br />
+  <p align='justify'>
+      7. The inventory screen. The player can review the items various characters have equipped, the items in store and the gold left.
+      The code can be found in INVENT.cpp
+  </p>
+  <img src='readme_assets\inventory_screen.png' alt="inventory screen" width='auto' height='70%'/>
+  
+  <br />
+  <p align='justify'>
+      8. Health bar animation testing file.
+      The code can be found in HP.cpp
+  </p>
+  <img src='readme_assets\health_bar_test.png' alt="health bar test" width='auto' height='70%'/>
+  
+  <br />
+  <p align='justify'>
+      8. The credits screen.
+      The code can be found in CREDITS.cpp
+  </p>
+  <img src='readme_assets\credits_scene.png' alt="credits screen" width='auto' height='70%'/>
+  
+  <br />
+  <p align='justify'>
+      9. Some dialogue box tests.
+      The code can be found in BLDIALOG.cpp, BRDIALOG.cpp and POPUPD.cpp
+  </p>
+  <img src='readme_assets\bottom_dialogue.png' alt="bottom left dialogue" width='auto' height='70%'/>
+  <img src='readme_assets\bottom_right_dialogue.png' alt="bottom right dialogue" width='auto' height='70%'/>
+  <img src='readme_assets\pop_up_dialogue.png' alt="pop up dialogue" width='auto' height='70%'/>
+  
+  <br />
+  <p align='justify'>
+      10. Some helper files:
+        - Color picker class
+        - Shape fillstyle class
+      The code can be found in STCOLOR.cpp and FILLSTYL.cpp
+  </p>
+  <img src='readme_assets\color_picker_screen.png' alt="color picker screen" width='auto' height='70%'/>
+  <img src='readme_assets\fillstyle_picker.png' alt="fill-style picker screen" width='auto' height='70%'/>
   
   
   
   <h1> Prerequisites </h1>
   <ul>
       <li>
-        <a href='https://www.oracle.com/in/java/technologies/javase/javase-jdk8-downloads.html'> Java SE8 SDK </a>
-      </li>
-      <li>
-        <a href='https://www.eclipse.org/downloads/packages/release/kepler/sr1/eclipse-ide-java-developers'> Eclipse IDE for Java </a>
-      </li>
-      <li>
-        <a href='https://www.lwjgl.org/download'> LWJGL </a>
-      </li>
-      <li>
-        <a href='https://jar-download.com/?search_box=joml'> JOML </a>
+        <a href='https://turbo-c.soft32.com/free-download/?nc&dm=3#google_vignette'> TURBO C++ IDE </a>
       </li>
   </ul>
   
@@ -111,32 +119,15 @@ This is the source code for the turn-based adventure game Moct.
   
   <h1> Getting Started </h1>
   <p align='justify'>
-      1. Start up eclipse. In the toolbar, go to 'File' -> 'Open Projects from File System'.
+      1. Download and extract all the .cpp files from the project inside C:\TURBOC3\BIN
   </p>
-  <img src='readme_assets\getting_started_1.png' alt="getting_started_1" width='80%' height='auto'/>
-
+  
   <p align='justify'>
-      2. Navigate to the folder *which is the parent* of the folder which has all project files*. Select that folder.
+      2. After installing TURBO C++, start it up. It is generally found in C:\TURBOC3\Turbo C++. The executable file name is Turbo C++.exe
   </p>
-  <img src='readme_assets\getting_started_2.png' alt="getting_started_2" width='80%' height='auto'/>
     
   <p align='justify'>
-      3. Select the option 'Search for nested projects' (beware, this option loads all project in the selected folder). Press 'Finish'.
-  </p>
-  <img src='readme_assets\getting_started_3.png' alt="getting_started_3" width='80%' height='auto'/>
-    
-  <p align='justify'>
-      4. In the Package Explorer, navigate through Overhead -> src -> game -> Overhead.java
-  </p>
-  <img src='readme_assets\getting_started_4.png' alt="getting_started_4" width='80%' height='auto'/>
-    
-  <p align='justify'>
-      5. Press the 'Run' button as shown in the image
-  </p>
-  <img src='readme_assets\getting_started_5.png' alt="getting_started_5" width='80%' height='auto'/>
-    
-  <p align='justify'>
-      Enjoy! <a href='https://www.eclipse.org/getting_started/'>Operating through Eclipse</a> is a breeze.
+      3. Navigate through all the files. Shortcut for compilation: Alt+F9. Shortcut for execution: Ctrl+F9. ENJOY! (There are tons of bugs :) )
   </p>
   
   
@@ -144,30 +135,13 @@ This is the source code for the turn-based adventure game Moct.
   <h1> Deployment </h1>
   <p align='justify'>
       There is no implementation for a sophisticated deployment system. 
-      One can pack and encrypt all files in order except the Overhead.java file, to make it a faux-deployed application.
+      One can pack and encrypt all files in order as a .zip file, to make it a faux-deployed application.
   </p>
-   
-   
-   
-  <h1> Built with </h1>
-  <ul>
-      <li>
-        <a href='https://www.eclipse.org/downloads/packages/release/kepler/sr1/eclipse-ide-java-developers'> Eclipse IDE for Java </a>
-      </li>
-      <li>
-        <a href='https://www.lwjgl.org/download'> LWJGL </a>
-      </li>
-      <li>
-        <a href='https://jar-download.com/?search_box=joml'> JOML </a>
-      </li>
-  </ul>
    
    
    
   <h1> Co-authors </h1>
   <p>
-      <a href='https://github.com/smitp1402'> Smit Panchal </a>
-      <br/>
       <a href='https://github.com/edgeemperor'> Sanpreet Singh Gill </a>
   </p>
    
@@ -175,5 +149,5 @@ This is the source code for the turn-based adventure game Moct.
    
   <h1> Acknowledgments </h1>
   <p align='justify'>
-      Taught completely by the YouTube course <a href='https://www.youtube.com/watch?v=VH9KAhjXVFM&list=PLILiqflMilIxta2xKk2EftiRHD4nQGW0u'>game development in LWJGL by Warmful       Development</a>.
+      The internet. Google. The built-in documentation for GRAPHICS.H in Turbo C++.
   </p>
